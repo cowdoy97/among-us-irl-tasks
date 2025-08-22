@@ -1,3 +1,3 @@
-"# among-us-irl-tasks" 
-"# among-us-irl-tasks" 
-"# among-us-irl-tasks" 
+Collection of Among Us IRL Tasks.
+
+Real ReadMe Coming.
