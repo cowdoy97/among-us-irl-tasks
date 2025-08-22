@@ -1,0 +1,57 @@
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 400px;
+    margin-top: 20px;
+}
+
+.grid-item {
+    background-color: #444;
+    border: 2px solid #666;
+    color: #fff;
+    font-size: 2em;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none; /* Prevents text selection on click */
+}
+
+.grid-item.selected {
+    background-color: #00ff00;
+    border-color: #00cc00;
+}
+
+#message {
+    color: #ff4444;
+    font-size: 1.5em;
+    height: 30px;
+}
+
+#countdown {
+    color: #ffffff;
+    font-size: 1.2em;
+    height: 25px;
+    margin-top: 10px;
+}

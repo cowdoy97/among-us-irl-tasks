@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Among Us File Upload Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login screen, shown first -->
+    <div id="login-container">
+        <h1>ACCESS TERMINAL</h1>
+        <input type="password" id="access-code" placeholder="ENTER ACCESS CODE">
+        <button onclick="login()">LOGIN</button>
+        <p id="error-message"></p>
+    </div>
+
+    <!-- The main application wrapper, hidden initially -->
+    <div id="app-wrapper" style="display: none;">
+        <!-- The file to be dragged, now with icon and text -->
+        <div id="fake-file" draggable="true">
+            <span class="file-icon">📄</span>
+            <span class="file-text">drag me!</span>
+        </div>
+
+        <!-- The main task area -->
+        <div id="task-container">
+            <h1 id="welcome-message"></h1>
+            <div id="drop-zone">
+                <p>Drag File Here</p>
+                <div id="folder-icon"></div>
+            </div>
+            <div id="progress-container" style="display: none;">
+                <div id="progress-bar"></div>
+                <span id="progress-text">0%</span>
+            </div>
+            <h2 id="task-complete" style="display: none;">TASK COMPLETE</h2>
+            <p id="countdown-message" style="display: none;"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Helper function to make the copy buttons work
+        function copyCode(elementId) {
+            const codeBlock = document.getElementById(elementId);
+            const code = codeBlock.innerText || codeBlock.textContent;
+            navigator.clipboard.writeText(code);
+        }
+    </script>
+</body>
+</html>

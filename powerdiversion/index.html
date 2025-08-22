@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Among Us: Power Diversion Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="task-container">
+        <div id="divert-power-panel">
+            <h2>Divert Power</h2>
+            <div class="sliders">
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="0" class="slider">
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="0" class="slider" id="correct-slider">
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="0" class="slider">
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="0" class="slider">
+                </div>
+            </div>
+        </div>
+
+        <div id="accept-power-panel" class="hidden">
+            <h2>Accept Diverted Power</h2>
+            <div class="fuse-box">
+                <button id="fuse-button"></button>
+            </div>
+            <p id="completion-message" class="hidden">Task Completed!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

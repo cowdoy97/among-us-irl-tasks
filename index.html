@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Among Us Tasks</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden; /* Hide scrollbars from stars overflowing */
+        }
+
+        /* Starry Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        /* Main Content Container */
+        .task-container {
+            background-color: rgba(10, 24, 77, 0.8);
+            border: 3px solid #0abdc6;
+            border-radius: 15px;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 15px rgba(10, 189, 198, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        /* Task List Styling */
+        .task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .task-list li {
+            margin-bottom: 1.5rem;
+        }
+
+        .task-list a {
+            display: block;
+            background-color: #f7f7f7;
+            color: #000000;
+            padding: 1rem;
+            text-decoration: none;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            border: 3px solid #a0a0a0;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        .task-list a:hover {
+            background-color: #ffff00; /* Yellow hover effect like in the game */
+            transform: scale(1.05);
+        }
+
+        /* Animation for stars */
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Starry Background -->
+    <div class="stars" id="star-container"></div>
+
+    <div class="task-container">
+        <h1>Tasks</h1>
+        <ul class="task-list">
+            <li><a href="verify/index.html">Verify ID</a></li>
+            <li><a href="fileupload/index.html">File Upload</a></li>
+            <li><a href="reactor/index.html">Reactor</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript to generate stars
+        const starContainer = document.getElementById('star-container');
+        const numStars = 200; // Adjust number of stars
+
+        for (let i = 0; i < numStars; i++) {
+            let star = document.createElement('div');
+            star.className = 'star';
+            let size = Math.random() * 3;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            starContainer.appendChild(star);
+        }
+    </script>
+
+</body>
+</html>
